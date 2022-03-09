@@ -12,10 +12,3 @@ async function init() {
 // });
 
 init();
-
-async function getSelection(){
-  const selection = await miro.board.getSelection();
-  console.log(selection);
-}
-
-getSelection()
