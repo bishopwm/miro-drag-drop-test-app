@@ -1,31 +1,6 @@
 // NOTE: app.js contains the the app logic for this starter app.
 
-// ---> FUNCTION TO CREATE A STICKY NOTE AND ZOOM TO IT ON SDK LOAD:
-
-// async function init() {
-//   const stickyNote = await miro.board.createStickyNote({
-//     content: 'hello, puppets!',
-//   });
-
-//   const shape = await miro.board.createShape({
-//     content: '<p>This is a very yellow star shape.</p>',
-//     shape: 'star',
-//     style: {
-//       fillColor: '#FEFF45',
-//     },
-//     x: 200,
-//     y: 200,
-//     width: 280,
-//     height: 280,
-//   });
-
-//   await miro.board.viewport.zoomTo(stickyNote);
-//   //await miro.board.viewport.zoomTo(shape);
-// }
-
-init();
-
-// ---> FUNCTION TO ENABLE DRAG/DROP OF AN IMAGE FROM OPEN PANEL AFTER SDK IS LOADED:
+// ---> FUNCTION TO (1) ENABLE DRAG/DROP OF AN IMAGE FROM OPEN PANEL AFTER SDK IS LOADED, (2) LOAD PLACHOLDERS TO DRAG ITEMS TO
 
 async function init() {
   
@@ -39,6 +14,21 @@ async function init() {
       // content: target.textContent,
     });
   });
+
+  const frame = await miro.board.createFrame({
+    title: 'Place your family members here',
+    style: {
+      fillColor: '#ffffff',
+    },
+    x: 400, 
+    y: 0, 
+    width: 800,
+    height: 450,
+  });
+
+  //await miro.board.viewport.zoomTo(frame);
+
+
 }
 
 init();

@@ -31,9 +31,13 @@ body {
 }
 
 img {
-  max-width: 100%;
+  max-width: 30%;
 }
 
 .button {
   text-decoration: none;
+}
+
+.img-container {
+  margin-top: 15%;
 }

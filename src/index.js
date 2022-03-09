@@ -5,8 +5,17 @@ async function init() {
     await miro.board.ui.openPanel({url: 'app.html'});
   });
 }
+
 //   miro.board.ui.openPanel({
 //     url: 'https://bishwm.me',
 //     height: 600,
 // });
+
 init();
+
+async function getSelection(){
+  const selection = await miro.board.getSelection();
+  console.log(selection);
+}
+
+getSelection()
