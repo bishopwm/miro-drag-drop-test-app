@@ -17,24 +17,17 @@ function createList(){
 createList();
 
 async function getListContents(){
-    // Get all items from the board
+    // Get items from the board
     const items = await miro.board.get();
 
-    //console.log(items);
-
-    // Count all card and shape items on the board
     let images = 0;
-
     items.forEach((items) => {
       switch (items.type) {
         case 'image':
           images++;
       }
-      //console.log(images);
     });
-    console.log(images)
-    //return images;
-    // Output to the console the total amount of card and shape items
-    
+    alert("You have " + images + " items in your list. Time to go shopping. :) ")  
 }
 
+getListContents()

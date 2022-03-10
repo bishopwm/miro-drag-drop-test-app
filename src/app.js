@@ -18,6 +18,3 @@ async function init() {
 }
 
 init();
-
-
-
