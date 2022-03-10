@@ -15,17 +15,6 @@ async function init() {
     });
   });
 
-  // const frame = await miro.board.createFrame({
-  //   title: 'Place your family members here',
-  //   style: {
-  //     fillColor: '#ffffff',
-  //   },
-  //   x: 400, 
-  //   y: 0, 
-  //   width: 800,
-  //   height: 450,
-  // });
-
 }
 
 init();

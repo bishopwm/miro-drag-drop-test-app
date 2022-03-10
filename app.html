@@ -11,16 +11,28 @@
     
     <div class="grid wrapper">
       <div class="cs1 ce12">
-        <h1>Family Planner App</h1>
-        <p>Drag and drop the individuals above as desired to create a family.</p>
-        <div class="cs1 ce12">
-          <img class="miro-draggable" src="https://st.depositphotos.com/1771835/1477/i/950/depositphotos_14778931-stock-photo-happy-man-thumbs-up-sign.jpg" alt="" />
-          <img class="miro-draggable" src="https://media.istockphoto.com/photos/glasses-girl-in-white-picture-id1089633230?k=20&m=1089633230&s=612x612&w=0&h=LNxo51TlLc-a8hNjJk5foJC9CI842yor3RvgNosIuKw=" alt="" />
-          <img class="miro-draggable" src="https://thumbs.dreamstime.com/z/koele-baby-24558726.jpg" alt="" />
+        <h1>Grocery List Organizer</h1>
+        <p>Create categorized lists for your groceries (e.g., Essentials, Extras, etc.) Create a list below, and then add the items you wish.</p>
+        <div>
+          <input type="text" id="listOne" placeholder="E.g., Essentials, Extras">
+          <button onClick="createList()">Create</button>   
         </div>
-        <input type="text" id="listOne">
-        <button onClick="createList()">Create</button>       
-        <div class="miro-draggable img-container"><b>Your family's size:</b></div>
+        <div class="cs1 ce12">
+          <img class="miro-draggable" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRGIOC_Si60D7FsX5Kvh2rKY3ACoPiNfP7iQ&usqp=CAU" alt="oranges" />
+          <img class="miro-draggable" src="https://images.megapixl.com/2461/24614462.jpg" alt="greens/salad" />
+          <img class="miro-draggable" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxai294nxUxUypStgcqgkyEogqor9HRi9mAA&usqp=CAU" alt="apple" />
+          <img class="miro-draggable" src="https://media.istockphoto.com/photos/wall-picture-id172402993?k=20&m=172402993&s=612x612&w=0&h=rMvLhu2IpN0Cev0aTJk3L8DDRRc59PsZTzrF1zobjDw=" alt="bread" />
+          <img class="miro-draggable" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJgtB48vuezWL12JyCRsA1STq74D9gyxze1w&usqp=CAU" alt="yogurt" />
+          <img class="miro-draggable" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZOtcwfEB72MeUP-PtYSN8IyNBA3hFD8cqRQ&usqp=CAU" alt="milk" />
+          <img class="miro-draggable" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU7dGbPaUc611enBDGciKytFZ3BKU8iKzeaQ&usqp=CAU" alt="chocolate" />
+          <img class="miro-draggable" src="https://media.istockphoto.com/photos/six-pack-of-brown-beer-bottles-in-blank-carrier-3d-render-isolated-picture-id949611712?k=20&m=949611712&s=612x612&w=0&h=hTOwKA720ELH23CGjMUbgr5h6bdC77G3Ek7AADLkrvk=" alt="beer" />
+          <img class="miro-draggable" src="https://c8.alamy.com/comp/BKWH9N/vogue-and-harpers-bazaar-fashion-magazine-covers-BKWH9N.jpg" alt="magazine" />
+          <img class="miro-draggable" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe4BtKnXHlNc2L9hT769gZ9RK5n7gITl78Ng&usqp=CAU" alt="chips" />
+        </div>
+        <div class="miro-draggable img-container"><b>List Size and Description:</b></div>
+        <div>
+          <button onClick="getListContents()">Get List Contents</button>   
+        </div>
       </div>
     </div>
     

@@ -6,9 +6,4 @@ async function init() {
   });
 }
 
-//   miro.board.ui.openPanel({
-//     url: 'https://bishwm.me',
-//     height: 600,
-// });
-
 init();
