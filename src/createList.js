@@ -1,6 +1,8 @@
+const itemIds = [];
+
 function createList(){
-    var listOne = document.getElementById('listOne').value
-    console.log(listOne)
+    let listOne = document.getElementById('listOne').value
+    console.log(listOne);
 
     const frameOne = miro.board.createFrame({
         title: listOne,
@@ -28,6 +30,37 @@ async function getListContents(){
       }
     });
     alert("You have " + images + " items in your list. Time to go shopping. :) ")  
+
+    // retrieve `id` for each item on board
+    items.forEach((items) => {
+      itemIds.push(items.title)
+    });
+
 }
 
-getListContents()
+getListContents();
+
+// Run sync job
+
+function getItems(){
+  console.log("Run sync initiated");
+  
+  //let knownObject = document.getElementById("beer");
+  //console.log(knownObject) 
+
+  console.log(itemIds)
+
+  //let boardItems = await miro.board.get();
+  //console.log(items)
+
+  //console.log("images from getListContents" + images)
+  //return(`<p>paragraph with ${itemIds[0]}</p>`)
+
+  document.getElementById("items-list").innerHTML = `First Item ID: ${itemIds[0]}`
+
+}
+
+getItems();
+
+// Print Item Ids to the panel on click for "Get Items"
+// Next: Get items (images) text equivalent and print it to the panel
