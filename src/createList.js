@@ -1,5 +1,7 @@
-const itemIds = [];
+// Declare global variable array to house item names once they're dragged onto Miro board.
+const itemNames = [];
 
+// Create list when 'Create' button is clicked from text input
 function createList(){
     let listOne = document.getElementById('listOne').value
     console.log(listOne);
@@ -18,6 +20,7 @@ function createList(){
 
 createList();
 
+// Retrieve the number of items on the board and push the title of each item into itemNames array for global use
 async function getListContents(){
     // Get items from the board
     const items = await miro.board.get();
@@ -31,36 +34,31 @@ async function getListContents(){
     });
     alert("You have " + images + " items in your list. Time to go shopping. :) ")  
 
-    // retrieve `id` for each item on board
+    // retrieve `title` for each item (image) on board
     items.forEach((items) => {
-      itemIds.push(items.title)
+      itemNames.push(items.title)
     });
 
 }
 
 getListContents();
 
-// Run sync job
+
+// Retrieve details about items on board
 
 function getItems(){
-  console.log("Run sync initiated");
-  
-  //let knownObject = document.getElementById("beer");
-  //console.log(knownObject) 
+  console.log("Gathering items");
+  console.log(itemNames);
 
-  console.log(itemIds)
-
-  //let boardItems = await miro.board.get();
-  //console.log(items)
-
-  //console.log("images from getListContents" + images)
-  //return(`<p>paragraph with ${itemIds[0]}</p>`)
-
-  document.getElementById("items-list").innerHTML = `First Item ID: ${itemIds[0]}`
-
+  // For each item in the itemNames array, add to list in HTML/panel when "Get Items" button is clicked.
+  for (let i=0; i<itemNames.length; i++){
+    console.log(itemNames[i])
+    document.getElementById("items-list").innerHTML += `${itemNames[i]}<br>`
+  }
 }
 
-getItems();
+getItems()
 
-// Print Item Ids to the panel on click for "Get Items"
-// Next: Get items (images) text equivalent and print it to the panel
+// Notes: 
+// - getItems is still dependent on getListContents running first. Otherwise, itemNames array will be empty when you go to getItems.
+// - List name will be returned as the last item, as it's the first item added to the board each time. Need to remove it from the equation.
