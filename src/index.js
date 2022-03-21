@@ -7,3 +7,17 @@ async function init() {
 }
 
 init();
+
+  // Listen to the 'app_card:open' event
+  miro.board.ui.on('app_card:open', (event) => {
+    console.log('Subscribed to app card open event', event);
+    const {appCard} = event;
+
+    // Fetch a specific app card by specifying its ID
+    const url = `https://bishwm.me`;
+
+    // Open the modal to display the content of the fetched app card
+    miro.board.ui.openModal({
+      url,
+    });
+  });
