@@ -1,65 +1,65 @@
 // Declare global variable array to house item names once they're dragged onto Miro board.
-const itemNames = [];
+//const itemNames = [];
 
 // Create list when 'Create' button is clicked from text input
-function createList(){
-    let listOne = document.getElementById('listOne').value
-    console.log(listOne);
+// function createList(){
+//     let listOne = document.getElementById('listOne').value
+//     console.log(listOne);
 
-    miro.board.createFrame({
-        title: listOne,
-        style: {
-          fillColor: '#ffffff',
-        },
-        x: 400, 
-        y: 0, 
-        width: 1800,
-        height: 4000,
-      });
-}
+//     miro.board.createFrame({
+//         title: listOne,
+//         style: {
+//           fillColor: '#ffffff',
+//         },
+//         x: 400, 
+//         y: 0, 
+//         width: 1800,
+//         height: 4000,
+//       });
+// }
 
-createList();
+// createList();
 
 // Retrieve the number of items on the board and push the title of each item into itemNames array for global use
-async function getListContents(){
-    // Get items from the board
-    const items = await miro.board.get();
+// async function getListContents(){
+//     // Get items from the board
+//     const items = await miro.board.get();
 
-    let images = 0;
-    items.forEach((items) => {
-      switch (items.type) {
-        case 'image':
-          images++;
-      }
-    });
-    //alert("You have " + images + " items in your list. Time to go shopping. :) ")  
-    document.getElementById("item-count").innerHTML = images
+//     let images = 0;
+//     items.forEach((items) => {
+//       switch (items.type) {
+//         case 'image':
+//           images++;
+//       }
+//     });
+//     //alert("You have " + images + " items in your list. Time to go shopping. :) ")  
+//     document.getElementById("item-count").innerHTML = images
 
-    // retrieve `title` for each item (image) on board
-    items.forEach((items) => {
-      itemNames.push(items.title)
-    });
+//     // retrieve `title` for each item (image) on board
+//     items.forEach((items) => {
+//       itemNames.push(items.title)
+//     });
 
-}
+// }
 
-getListContents();
+// getListContents();
 
 
 // Retrieve details about items on board
 
-function getItems(){
-  console.log("Gathering items");
-  getListContents()
-  console.log(itemNames);
+// function getItems(){
+//   console.log("Gathering items");
+//   getListContents()
+//   console.log(itemNames);
 
-  // For each item in the itemNames array, add to list in HTML/panel when "Get Items" button is clicked.
-  for (let i=0; i<itemNames.length; i++){
-    console.log(itemNames[i])
-    document.getElementById("items-list").innerHTML += `${itemNames[i]}<br>`
-  }
-}
+//   // For each item in the itemNames array, add to list in HTML/panel when "Get Items" button is clicked.
+//   for (let i=0; i<itemNames.length; i++){
+//     console.log(itemNames[i])
+//     document.getElementById("items-list").innerHTML += `${itemNames[i]}<br>`
+//   }
+// }
 
-getItems()
+// getItems()
 
 // Notes: 
 //
@@ -75,31 +75,38 @@ getItems()
 
 async function createAppCard(){
 
-  console.log("app card!")
+  let cardTitle = document.getElementById('card-title').value;
+  let cardDescription = document.getElementById('card-description').value;
+  let cardTag1 = document.getElementById('tag-name-1').value;
+  let cardTag1Tooltip = document.getElementById('tag-tooltip-1').value;
+  let cardTag2 = document.getElementById('tag-name-2').value;
+  let cardTag2Tooltip = document.getElementById('tag-tooltip-2').value;
+  
+  let cardIcon = document.getElementById('card-icon').value;
+  //console.log("app card! with name" + cardTitle)
 
   const appCard = await miro.board.createAppCard({
-    title: 'This is the title of the app card',
-    description:
-      'The custom preview fields are highlighted in different colors; the app card icon is displayed on the bottom-right.',
+    title: cardTitle,
+    description: cardDescription,
     style: {
       cardTheme: '#2d9bf0',
     },
     fields: [
       {
-        value: 'To do',
-        iconUrl: 'https://cdn-icons-png.flaticon.com/512/1012/1012232.png',
+        value: cardTag1,
+        iconUrl: `${cardIcon}`,
         iconShape: 'square',
         fillColor: '#FBE983',
         textColor: '#F83A22',
-        tooltip: 'Caption text displayed in a tooltip when clicking or hovering over the preview field',
+        tooltip: cardTag1Tooltip,
       },
       {
-        value: 'Project timeline',
+        value: cardTag2,
         iconUrl: 'https://cdn-icons-png.flaticon.com/512/4659/4659531.png',
         iconShape: 'round',
         fillColor: '#F8D878',
         textColor: '#503000',
-        tooltip: 'Caption text displayed in a tooltip when clicking or hovering over the preview field',
+        tooltip: cardTag2Tooltip,
       }
     ],
     x: 2000,
@@ -108,11 +115,8 @@ async function createAppCard(){
     rotation: 0.0,
   });
 
-
-
   // Output the created item to the developer console
   console.log(appCard);
-  
 }
 
-createAppCard()
+createAppCard();
