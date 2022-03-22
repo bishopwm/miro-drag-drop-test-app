@@ -44,12 +44,15 @@ async function createAppCard(){
 
   // Output the created item to the developer console
   console.log(appCard);
+
+  // restart form flow:
+  document.getElementById("modal-url-details").setAttribute("style", "visibility: hidden");
 }
 
 createAppCard();
 
 function proceedNextStep(){
-  document.getElementById("modal-url-details").removeAttribute("hidden");
+  document.getElementById("modal-url-details").setAttribute("style", "display: block");
 }
 
 proceedNextStep();
