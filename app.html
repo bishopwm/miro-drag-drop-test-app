@@ -6,35 +6,38 @@
     <link rel="stylesheet" href="/src/assets/style.css" />
     <script src="https://miro.com/app/static/sdk/v2/miro.js"></script>
     <script src="./src/createList.js"></script>
+    <script src="./src/index.js"></script>
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
   </head>
   <body>
-    
     <div class="grid wrapper">
       <div class="cs1 ce12">
         <h1>Create Business Profile</h1>
-        <p>Fill out your details below and hit create to generate your business card.</p>
+        <p>Use this app to quickly fill in personal/professional details and generate 
+        a "business card," using Miro's <a href="https://beta.developers.miro.com/docs/appcard_appcard-1" target="_blank">`appCard`</a> capability. <br><br>Once you've filled out these details, hit <strong>Next</strong> to proceed to the modal details. When you're finished, hit <strong>Create!</strong></p>
         <div>
+          <h3>Personal Details</h3>
           <input type="text" id="card-title" placeholder="Name"><br>
           <input type="text" id="card-description" placeholder="Title"><br>
-          <input type="text" id="tag-name-1" placeholder="Email">
-          <input type="text" id="tag-tooltip-1" placeholder="Alternate Email (Optional)">
+          <input type="text" id="tag-name-1" placeholder="Email"><br>
+          <!-- <input type="text" id="tag-tooltip-1" placeholder="Alternate Email (Optional)"> -->
           <input type="text" id="tag-name-2" placeholder="Phone">
-          <input type="text" id="tag-tooltip-2" placeholder="Alternate Phone (Optional)">
-        </div>
-        <div>
-          <h3>Import Contact from 3rd party</h3>
-          <label for="providers">Choose a provider:</label><br>
-            <select name="providers">
-              <option value="zoom">Zoom</option>
-              <option value="github">Github</option>
-            </select>
+          <!-- <input type="text" id="tag-tooltip-2" placeholder="Alternate Phone (Optional)"> -->
         </div><br>
-        <div>
-          <button onClick="createAppCard()">Create Business Card</button>  
+        <button onClick="proceedNextStep()">Next</button>
+        <div id="modal-url-details" hidden>
+          <h3>Specify your portfolio/personal site</h3>
+          <label>Use my own site:</label><br>
+          <input type="url" id="portfolio-url" placeholder="Your URL"><br>
+          <p><strong>Or...</strong></p>
+          <button onClick="setProfileUrl()">Use Miro Profile</button><br>
+          <div id="create-button-container">
+            <button onClick="createAppCard()">Create Business Card</button>  
+          </div>
         </div>
       </div>
+
     </div>
-    
     <script type="module" src="/src/app.js"></script>
   </body>
 </html>

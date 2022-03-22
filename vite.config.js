@@ -18,5 +18,12 @@ module.exports = defineConfig({
     rollupOptions: {
       input: allHtmlEntries,
     },
+    server: {
+      hmr: {
+        clientPort: 443,
+      }
+    }
   },
 });
+
+
