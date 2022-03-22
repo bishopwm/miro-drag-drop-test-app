@@ -94,7 +94,7 @@ async function createAppCard(){
     fields: [
       {
         value: cardTag1,
-        iconUrl: `${cardIcon}`,
+        iconUrl: 'https://cdn-icons-png.flaticon.com/512/646/646094.png',
         iconShape: 'square',
         fillColor: '#FBE983',
         textColor: '#F83A22',
@@ -102,7 +102,7 @@ async function createAppCard(){
       },
       {
         value: cardTag2,
-        iconUrl: 'https://cdn-icons-png.flaticon.com/512/4659/4659531.png',
+        iconUrl: 'https://cdn-icons-png.flaticon.com/512/580/580740.png',
         iconShape: 'round',
         fillColor: '#F8D878',
         textColor: '#503000',

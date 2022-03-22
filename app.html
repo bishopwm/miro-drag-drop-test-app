@@ -11,22 +11,26 @@
     
     <div class="grid wrapper">
       <div class="cs1 ce12">
-        <h1>Create App Card</h1>
-        <p>Fill out card attributes below and hit create to generate your card.</p>
+        <h1>Create Business Profile</h1>
+        <p>Fill out your details below and hit create to generate your business card.</p>
         <div>
-          <input type="text" id="card-title" placeholder="Card Title"><br>
-          <input type="text" id="card-description" placeholder="Card Description"><br>
-          <input type="text" id="tag-name-1" placeholder="Tag 1 Value">
-          <input type="text" id="tag-tooltip-1" placeholder="Tag 1 tooltip description">
-          <input type="text" id="tag-name-2" placeholder="Tag 2 Value">
-          <input type="text" id="tag-tooltip-2" placeholder="Tag 2 tooltip description">
+          <input type="text" id="card-title" placeholder="Name"><br>
+          <input type="text" id="card-description" placeholder="Title"><br>
+          <input type="text" id="tag-name-1" placeholder="Email">
+          <input type="text" id="tag-tooltip-1" placeholder="Alternate Email (Optional)">
+          <input type="text" id="tag-name-2" placeholder="Phone">
+          <input type="text" id="tag-tooltip-2" placeholder="Alternate Phone (Optional)">
         </div>
         <div>
-          <h3>Provide Card Icon:</h3>
-          <input type="url" id="card-icon" placeholder="Image URL">
-        </div>
+          <h3>Import Contact from 3rd party</h3>
+          <label for="providers">Choose a provider:</label><br>
+            <select name="providers">
+              <option value="zoom">Zoom</option>
+              <option value="github">Github</option>
+            </select>
+        </div><br>
         <div>
-          <button onClick="createAppCard()">Create App Card</button>  
+          <button onClick="createAppCard()">Create Business Card</button>  
         </div>
       </div>
     </div>
