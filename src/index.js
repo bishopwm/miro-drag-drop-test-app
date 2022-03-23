@@ -1,14 +1,12 @@
 // NOTE: index.js contains the specific Miro Web SDK methods that you'd like to call 
 
+// init function to open SDK panel on icon click
 async function init() {
   miro.board.ui.on('icon:click', async () => {
     await miro.board.ui.openPanel({url: 'app.html'});
   });
 }
-
 init();
-
-//const portfolioOptions = [];
 
 // Listen to the 'app_card:open' event
 miro.board.ui.on('app_card:open', (event) => {
@@ -16,6 +14,8 @@ miro.board.ui.on('app_card:open', (event) => {
   const {appCard} = event;
 
   let portfolioUrl = '';
+  // function to determine if user has provided their own URL for modal content. 
+  // If yes, use this URL. If not, use Miro profile for current user.
   function determineUrl(){
     if(document.getElementById("site-checkbox").checked){
       portfolioUrl = document.getElementById("portfolio-url").value
@@ -25,32 +25,13 @@ miro.board.ui.on('app_card:open', (event) => {
     return portfolioUrl
   }
   determineUrl();
-
   
-  // Fetch a specific app card by specifying its ID
+  // Set URL for modal content based on logic above.
   const url = `${portfolioUrl}`;
-  // const userInfo = await miro.board.getUserInfo();
-  // const url = `https://miro.com/app/settings/company/${userInfo.id}/user-profile`;
 
   // Open the modal to display the content of the fetched app card
   miro.board.ui.openModal({
     url,
-    fullscreen: true
+    fullscreen: false
   });
 });
-
-// async function setProfileUrl(){
-//   console.log("miro profile selected")
-  
-//   const userInfo = await miro.board.getUserInfo();
-//   console.log("User ID: " + userInfo.id); // => "3658432978520043388"
-
-//   let url = `https://miro.com/app/settings/company/3074457345821140946/user-profile`;
-
-//   // Open the modal to display the content of the fetched app card
-//   miro.board.ui.openModal({
-//     url,
-//     fullscreen: true
-//   });
-
-// }

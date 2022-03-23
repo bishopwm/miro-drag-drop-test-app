@@ -2,16 +2,14 @@
 
 async function createAppCard(){
 
+  // define `appCard` attributes based on user inputs
+  // cardTitle = appCard.title, cardDescription = appCard.description, cardTag = appCard.fields.value
   let cardTitle = document.getElementById('card-title').value;
   let cardDescription = document.getElementById('card-description').value;
   let cardTag1 = document.getElementById('tag-name-1').value;
-  //let cardTag1Tooltip = document.getElementById('tag-tooltip-1').value;
   let cardTag2 = document.getElementById('tag-name-2').value;
-  //let cardTag2Tooltip = document.getElementById('tag-tooltip-2').value;
-  
-  //let cardIcon = document.getElementById('card-icon').value;
-  //console.log("app card! with name" + cardTitle)
 
+  // call SDK method to create appCard
   const appCard = await miro.board.createAppCard({
     title: cardTitle,
     description: cardDescription,
@@ -45,18 +43,18 @@ async function createAppCard(){
   // Output the created item to the developer console
   console.log(appCard);
 
-  // restart form flow:
+  // refresh app.html form on card generation:
   document.getElementById("modal-url-details").setAttribute("style", "visibility: hidden");
 }
-
 createAppCard();
 
+// expose modal inputs on 'Next' button click
 function proceedNextStep(){
   document.getElementById("modal-url-details").setAttribute("style", "display: block");
 }
-
 proceedNextStep();
 
+// expose https:// url input on toggle click for 'specify your own portfolio/site?'
 function showPortfolioUrl(){
   document.getElementById("portfolio-url").setAttribute("style", "display: block")
 }
