@@ -56,3 +56,7 @@ function proceedNextStep(){
 }
 
 proceedNextStep();
+
+function showPortfolioUrl(){
+  document.getElementById("portfolio-url").setAttribute("style", "display: block")
+}
