@@ -29,9 +29,14 @@ miro.board.ui.on('app_card:open', (event) => {
   // Set URL for modal content based on logic above.
   const url = `${portfolioUrl}`;
 
+  // Fetch a specific app card by specifying its ID
+  const specificCard = appCard;
+  console.log(specificCard);
+
   // Open the modal to display the content of the fetched app card
   miro.board.ui.openModal({
     url,
     fullscreen: false
   });
+  console.log(appCard)
 });
