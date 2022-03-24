@@ -52,11 +52,8 @@ createAppCard();
 function proceedNextStep(){
   document.getElementById("modal-url-details").setAttribute("style", "display: block");
 }
-proceedNextStep();
 
 // expose https:// url input on toggle click for 'specify your own portfolio/site?'
 function showPortfolioUrl(){
   document.getElementById("portfolio-url").setAttribute("style", "display: block")
 }
-
-showPortfolioUrl();
