@@ -9,6 +9,23 @@ async function createAppCard(){
   let cardTag1 = document.getElementById('tag-name-1').value;
   let cardTag2 = document.getElementById('tag-name-2').value;
 
+  //function storeModalUrlPreference(){
+    
+    function determineUrl(){
+      if(document.getElementById("site-checkbox").checked){
+        portfolioUrl = document.getElementById("portfolio-url").value
+      } else {
+        portfolioUrl = "https://miro.com/app/settings/company/3074457345821140946/user-profile"
+      }
+      return portfolioUrl;
+    }
+    determineUrl();
+  // console.log("Preference selected :" + portfolioUrl)
+  // localStorage.setItem("urlPreference", portfolioUrl);
+  // console.log(localStorage);
+  
+  //storeModalUrlPreference();
+
   // call SDK method to create appCard
   const appCard = await miro.board.createAppCard({
     title: cardTitle,
@@ -42,6 +59,8 @@ async function createAppCard(){
 
   // Output the created item to the developer console
   console.log(appCard);
+  localStorage.setItem(appCard.id, `${portfolioUrl}`)
+  console.log("Local Storage: " + localStorage.getItem(appCard.id))
 
   // refresh app.html form on card generation:
   document.getElementById("modal-url-details").setAttribute("style", "visibility: hidden");
@@ -57,7 +76,7 @@ function proceedNextStep(){
   } else {
     alert("Please fill out missing fields.")
   }
-  
+  document.getElementById("next-button").setAttribute("style", "visibility: hidden");
   
 }
 
