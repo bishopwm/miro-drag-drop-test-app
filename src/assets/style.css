@@ -78,6 +78,15 @@ img {
   margin-top: 1rem;
 }
 
+#next-checkmark {
+  width: 80%;
+  color:#21531f;
+}
+
+#checkmark-icon {
+  width: 7%;
+}
+
 /* Toggle */
 
 /* The switch - the box around the slider */
@@ -142,3 +151,4 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+

@@ -23,7 +23,10 @@
           <input type="email" id="tag-name-1" placeholder="@"><br>
           <input type="tel" id="tag-name-2" placeholder="+31 ...">
         </div><br>
-        <button onClick="proceedNextStep()">Next</button>
+        <div id="next-checkmark" hidden>
+          <p>Details saved <img id="checkmark-icon" src="https://cdn-icons-png.flaticon.com/512/1828/1828644.png"></p>
+        </div>
+        <button onClick="proceedNextStep()" id="next-button">Next</button><br>        
         <div id="modal-url-details" hidden>
           <h4>Specify your portfolio/personal site?</h4>
           <p><em>(If no site is provided, default to current user's profile)</em></p>
@@ -37,7 +40,6 @@
           </div>
         </div>
       </div>
-
     </div>
     <script type="module" src="/src/app.js"></script>
   </body>

@@ -49,8 +49,16 @@ async function createAppCard(){
 createAppCard();
 
 // expose modal inputs on 'Next' button click
-function proceedNextStep(){
-  document.getElementById("modal-url-details").setAttribute("style", "display: block");
+function proceedNextStep(){  
+  console.log(document.getElementById('card-title').value.length > 0 && document.getElementById('card-description').value.length > 0 && document.getElementById('tag-name-1').value.length > 0 && document.getElementById('tag-name-2').value.length > 0)
+  if(document.getElementById('card-title').value.length > 0 && document.getElementById('card-description').value.length > 0 && document.getElementById('tag-name-1').value.length > 0 && document.getElementById('tag-name-2').value.length > 0){
+    document.getElementById("next-checkmark").setAttribute("style", "display: block");
+    document.getElementById("modal-url-details").setAttribute("style", "display: block");
+  } else {
+    alert("Please fill out missing fields.")
+  }
+  
+  
 }
 
 // expose https:// url input on toggle click for 'specify your own portfolio/site?'
