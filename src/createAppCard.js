@@ -9,22 +9,16 @@ async function createAppCard(){
   let cardTag1 = document.getElementById('tag-name-1').value;
   let cardTag2 = document.getElementById('tag-name-2').value;
 
-  //function storeModalUrlPreference(){
-    
-    function determineUrl(){
-      if(document.getElementById("site-checkbox").checked){
-        portfolioUrl = document.getElementById("portfolio-url").value
-      } else {
-        portfolioUrl = "https://miro.com/app/settings/company/3074457345821140946/user-profile"
-      }
-      return portfolioUrl;
+  function determineUrl(){
+
+    if(document.getElementById("site-checkbox").checked){
+      portfolioUrl = document.getElementById("portfolio-url").value
+    } else {
+      portfolioUrl = `https://miro.com/app/settings/user-profile`
     }
-    determineUrl();
-  // console.log("Preference selected :" + portfolioUrl)
-  // localStorage.setItem("urlPreference", portfolioUrl);
-  // console.log(localStorage);
-  
-  //storeModalUrlPreference();
+    return portfolioUrl;
+  }
+  determineUrl();
 
   // call SDK method to create appCard
   const appCard = await miro.board.createAppCard({
@@ -57,10 +51,11 @@ async function createAppCard(){
     rotation: 0.0,
   });
 
+
   // Output the created item to the developer console
   console.log(appCard);
-  localStorage.setItem(appCard.id, `${portfolioUrl}`)
-  console.log("Local Storage: " + localStorage.getItem(appCard.id))
+  localStorage.setItem(appCard.id, `${portfolioUrl}`);
+  console.log("Local Storage: " + localStorage.getItem(appCard.id));
 
   // refresh app.html form on card generation:
   document.getElementById("modal-url-details").setAttribute("style", "visibility: hidden");
