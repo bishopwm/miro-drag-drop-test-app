@@ -47,6 +47,27 @@ img {
   margin-left: 1rem;
 }
 
+#card-icon {
+  float: left;
+  margin-right: 1rem;
+  margin-top: 0.5rem;
+}
+
+#sub-header {
+  color: rgb(19, 51, 71);
+  margin-bottom: 1rem;
+}
+
+.input-icon {
+  width: 6%;
+  margin-right: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+input {
+  margin-bottom: 0.25rem;
+}
+
 #create-button-container {
   margin-top: 1rem;
   width: 200%;

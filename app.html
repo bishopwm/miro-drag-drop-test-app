@@ -13,15 +13,23 @@
   <body>
     <div class="grid wrapper">
       <div class="cs1 ce12">
-        <h1>Create Business Profile</h1>
-        <p>Use this app to quickly fill in personal/professional details and generate 
-        a "business card," using Miro's <a href="https://beta.developers.miro.com/docs/appcard_appcard-1" target="_blank">`appCard`</a> capability. <br><br>Once you've filled out these details, hit <strong>Next</strong> to proceed to the modal details. When you're finished, hit <strong>Create Card.</strong> This will generate an app card in Miro, based on your profile.</p>
+        <img id="card-icon" src="https://cdn-icons-png.flaticon.com/512/522/522556.png">
+        <div id="sub-header">
+          <h2>Share your virtual business card!</h2>
+        </div>
+        <p>Use this app to quickly fill in your professional details and generate 
+        a "business card," using Miro v2 Web SDK's <a href="https://beta.developers.miro.com/docs/appcard_appcard-1" target="_blank">`appCard`</a> capability. 
+        <br><br>Fill out your primary details, then hit <strong>Next</strong> to share an optional portfolio. When you're finished, hit 
+        <strong>Create Card.</strong> This will generate an App Card in Miro, based on your profile.</p>
         <div>
-          <h3>Personal Details</h3>
-            <input type="text" id="card-title" placeholder="Name"><br>
-            <input type="text" id="card-description" placeholder="Title"><br>
-            <input type="email" id="tag-name-1" placeholder="@"><br>
-            <input type="tel" id="tag-name-2" placeholder="+31 ...">
+          <h3>Professional Details</h3>
+            <img class="input-icon" src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png"><input type="text" id="card-title" placeholder="Name"><br>
+            <img class="input-icon" src="https://cdn-icons-png.flaticon.com/512/2891/2891526.png"><input type="text" id="card-org" placeholder="Organization"><br>
+            <img class="input-icon" src="https://cdn-icons-png.flaticon.com/512/2910/2910791.png"><input type="text" id="card-description" placeholder="Title/Role"><br>
+            <img class="input-icon" src="https://cdn-icons-png.flaticon.com/512/725/725643.png"><input type="email" id="tag-name-1" placeholder="@"><br>
+            <h3>Optional</h3>
+            <img class="input-icon" src="https://cdn-icons-png.flaticon.com/512/21/21520.png"><input type="tel" id="tag-name-2" placeholder="+31 ..."><br>
+            <img class="input-icon" src="https://cdn-icons-png.flaticon.com/512/733/733609.png"><input type="text" id="tag-name-3" placeholder="/handle">
         </div><br>
         <div id="next-checkmark" hidden>
           <p><img id="checkmark-icon" src="https://cdn-icons-png.flaticon.com/512/1828/1828644.png"> Details saved</p>
