@@ -101,8 +101,7 @@ function proceedNextStep(){
   if(
     // if these fields are filled out, you can proceed
     document.getElementById('card-title').value.length > 0 
-    && document.getElementById('card-description').value.length > 0 
-    && document.getElementById('tag-name-1').value.length > 0){
+    && document.getElementById('card-description').value.length > 0){
       document.getElementById("next-checkmark").setAttribute("style", "display: block");
       document.getElementById("modal-url-details").setAttribute("style", "display: block");
       document.getElementById("next-button").setAttribute("style", "visibility: hidden");

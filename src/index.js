@@ -1,4 +1,4 @@
-// init function to open SDK panel on icon click
+// init function to open SDK panel on icon clickk
 async function init() {
   miro.board.ui.on('icon:click', async () => {
     await miro.board.ui.openPanel({url: 'app.html'});
