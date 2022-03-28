@@ -1,4 +1,5 @@
 // App Cards Playground
+//import {showCardLink} from './modalAction.js';
 
 async function createAppCard(){
   // define `appCard` attributes based on user inputs
@@ -92,6 +93,27 @@ async function createAppCard(){
   document.getElementById("site-checkbox").checked = false;
   document.getElementById("portfolio-url").setAttribute("style", "visibility:hidden");
   document.getElementById("portfolio-url").value = null;
+
+  //Generate unique card URL:
+  // console.log(`Link to created card: https://miro.com/app/board/uXjVOHbG8r4=/?moveToWidget=${appCard.id}`)
+  // alert(`
+  //   Share card URL:
+  //   https://miro.com/app/board/uXjVOHbG8r4=/?moveToWidget=${appCard.id}
+  // `)
+
+  //Show card url on success:
+
+  
+const cardLink = document.getElementById("show-card-url");
+cardLink.innerHTML = "";
+let html = `
+  <h2>Share your card's unique URL:</h2>
+  <p>https://miro.com/app/board/uXjVOHbG8r4=/?moveToWidget=${appCard.id}</p>
+
+`;
+cardLink.insertAdjacentHTML("afterend", html);
+document.getElementById("show-card-url-container").setAttribute("style", "display: block");
+
 
 }
 createAppCard();

@@ -100,6 +100,13 @@ input {
   width: 7%;
 }
 
+#show-card-url-container {
+  background-color: #21531f;
+  color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
 /* Toggle */
 
 /* The switch - the box around the slider */
