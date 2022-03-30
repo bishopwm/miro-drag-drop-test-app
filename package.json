@@ -10,7 +10,8 @@
   "dependencies": {
     "axios": "^0.26.1",
     "cors": "^2.8.5",
-    "mirotone": "^2.0.5"
+    "mirotone": "^2.0.5",
+    "node-url-shortener": "^2.0.1"
   },
   "devDependencies": {
     "@mirohq/websdk-types": "latest",
