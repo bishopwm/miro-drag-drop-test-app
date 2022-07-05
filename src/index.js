@@ -3,6 +3,12 @@ async function init() {
   miro.board.ui.on('icon:click', async () => {
     await miro.board.ui.openPanel({url: 'app.html'});
   });
+  await miro.board.ui.openModal({
+    url: 'http://localhost:3000/', // Replace this with the desired `url` display value for the modal
+    width: 600,
+    height: 400,
+    fullscreen: false,
+  });
 }
 init();
 
