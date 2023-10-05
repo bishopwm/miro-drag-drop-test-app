@@ -67,6 +67,7 @@ async function createAppCard(){
     y: 2000,
     width: 320,
     rotation: 0.0,
+    status: 'connected'
   });
 
   // Output the created item to the developer console
