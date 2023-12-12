@@ -23,3 +23,7 @@ inside `dist/` which you can host on static hosting service.
 
 This app is using [vite](https://vitejs.dev/) so you can check the documentation
 if you want to modify `vite.config.js` configuration if needed.
+
+![felix-berger-2evqv4zZxTY-unsplash](https://github.com/bishopwm/miro-drag-drop-test-app/assets/10800544/2f13ebe0-52ad-4cf5-81ea-836a1aed1cae)
+![misty-ladd-tY6eXMyGh2w-unsplash](https://github.com/bishopwm/miro-drag-drop-test-app/assets/10800544/f8eee465-66f2-484a-87a9-22096077c1a0)
+![rodion-kutsaiev-ySNkCkdKyTY-unsplash](https://github.com/bishopwm/miro-drag-drop-test-app/assets/10800544/d0606562-a8a9-46e3-b046-3947ccd48936)
