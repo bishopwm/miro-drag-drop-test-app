@@ -27,3 +27,7 @@ if you want to modify `vite.config.js` configuration if needed.
 ![felix-berger-2evqv4zZxTY-unsplash](https://github.com/bishopwm/miro-drag-drop-test-app/assets/10800544/2f13ebe0-52ad-4cf5-81ea-836a1aed1cae)
 ![misty-ladd-tY6eXMyGh2w-unsplash](https://github.com/bishopwm/miro-drag-drop-test-app/assets/10800544/f8eee465-66f2-484a-87a9-22096077c1a0)
 ![rodion-kutsaiev-ySNkCkdKyTY-unsplash](https://github.com/bishopwm/miro-drag-drop-test-app/assets/10800544/d0606562-a8a9-46e3-b046-3947ccd48936)
+
+
+
+![Email banner](https://github.com/bishopwm/miro-drag-drop-test-app/assets/10800544/424e3fa9-edc5-49cc-b8c4-69ea98e84c75)
